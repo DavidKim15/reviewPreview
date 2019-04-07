@@ -61,7 +61,6 @@ class dbWrapper {
                 address_of_session  <- address,
                 organizer_name      <- oname)
             let id = try db!.run(insert)
-            
             return id
         } catch {
             print("Insert failed")

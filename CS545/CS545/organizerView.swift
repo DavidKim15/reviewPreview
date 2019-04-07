@@ -27,13 +27,13 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     var reviewSessionDict: [String:Int] = [:]
     
     let mapWeekday : [Int:String] = [
-        0: "Sunday",
-        1: "Monday",
-        2: "Tuesday",
-        3: "Wednesday",
-        4: "Thursday",
-        5: "Friday",
-        6: "Saturday"]
+        1: "Sunday",
+        2: "Monday",
+        3: "Tuesday",
+        4: "Wednesday",
+        5: "Thursday",
+        6: "Friday",
+        7: "Saturday"]
     let mapMilitaryTime : [Int:Int] = [
         0:12,
         1:1,
@@ -89,7 +89,7 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @objc func dateChanged(_ sender: UIDatePicker) {
         let components = Calendar.current.dateComponents([.year, .month, .day], from: sender.date)
         if let day = components.day, let month = components.month, let year = components.year {
-            occasionDate = ("\(month) \(day) \(year)")
+            occasionDate = ("\(month)/\(day)/\(year)")
             print(occasionDate)
         }
     }

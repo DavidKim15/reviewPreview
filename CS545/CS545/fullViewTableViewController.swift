@@ -68,13 +68,19 @@ class fullViewTableViewController: UITableViewController {
     }
     func createSessionArray() {
         
-        print(occasionReceived == "")
+        print(occasionReceived)
         print(dateReceived)
         print(courseNameReceived)
         print(address)
         print(organizerName)
         print(receivedOccasionDate)
-        if  {
+//        occasionReceived = "Exam"
+//        dateReceived = "Monday 4:00PM 4/9"
+//        courseNameReceived = "CS 115"
+//        address = "NC 120"
+//        organizerName = "Khayyam"
+//        receivedOccasionDate = "4/20/2019"
+        if !(occasionReceived == "") {
             let rowid = dbWrapper.instance.addSession(sdate: dateReceived, occ: occasionReceived, odate: receivedOccasionDate, cname: courseNameReceived, address: address, oname: organizerName)
             print(rowid)
         }

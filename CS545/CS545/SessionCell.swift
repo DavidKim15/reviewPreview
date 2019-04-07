@@ -103,9 +103,9 @@ class SessionCell : UITableViewCell {
         addSubview(sessionOccasionDate)
 //        addSubview(increaseButton)
         
-        sessionCourseName.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 20, paddingBottom: 5, paddingRight: 0, width: 90, height: 0, enableInsets: false)
+        sessionCourseName.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 5, paddingLeft: 20, paddingBottom: 5, paddingRight: 0, width: 170, height: 0, enableInsets: false)
         sessionDate.anchor(top: sessionCourseName.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
-        sessionOccasion.anchor(top: topAnchor, left: sessionCourseName.rightAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
+        sessionOccasion.anchor(top: topAnchor, left: sessionCourseName.rightAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 130, height: 0, enableInsets: false)
         sessionOccasionDate.anchor(top: sessionOccasion.bottomAnchor, left: sessionCourseName.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
         sessionOrganizer.anchor(top: topAnchor, left: sessionOccasion.rightAnchor, bottom: nil, right: nil, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
         sessionAddress.anchor(top: sessionOrganizer.bottomAnchor, left: sessionOccasion.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: frame.size.width / 2, height: 0, enableInsets: false)
