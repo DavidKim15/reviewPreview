@@ -12,9 +12,11 @@ import CoreLocation
 
 class organizerView2: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
     // -------------------------------------------------------//
-    var received1 = ""
-    var received2:[String:Int] = [:]
-    var received3 = ""
+    var receivedOccasion = ""
+    var receivedSessionDate = ""
+    var receivedCourseName = ""
+    var receivedOrganizerName = ""
+    var receivedOccasionDate = ""
     // -------------------------------------------------------//
     let locationManager = CLLocationManager()
     @IBOutlet weak var mapview: MKMapView!
@@ -22,12 +24,14 @@ class organizerView2: UIViewController,MKMapViewDelegate,CLLocationManagerDelega
 
     // send data over to fullView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {// get a reference to the second view controller
-        let fullView = segue.destination as! fullView
+        let fullViewTableViewController = segue.destination as! fullViewTableViewController
         // set a variable in the second view controller with the String to pass
-        fullView.received1 = received1
-        fullView.received2 = received2
-        fullView.received3 = received3
-        fullView.received4 = userLocationInput.text!
+        fullViewTableViewController.receivedOccasion = receivedOccasion
+        fullViewTableViewController.receivedSessionDate = receivedSessionDate
+        fullViewTableViewController.receivedCourseName = receivedCourseName
+        fullViewTableViewController.received4 = userLocationInput.text!
+        fullViewTableViewController.receivedOrganizerName = receivedOrganizerName
+        fullViewTableViewController.receivedOccasionDate = receivedOccasionDate
     }
     
     override func viewDidLoad() {

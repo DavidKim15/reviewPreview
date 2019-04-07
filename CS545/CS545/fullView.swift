@@ -7,10 +7,18 @@
 //
 
 import UIKit
-//import SQLite
+import SQLite
 
 class fullView: UIViewController {
-//    let db = try Connection("path/to/db.sqlite3")
+    let db = try! Connection("path/to/db.sqlite3")
+    
+    let sessions = Table("sessions")
+    
+    let occasion = Expression<String>("occasion")
+    let date = Expression<String>("date")
+    let courseName = Expression<String>("courseName")
+    let addressOfSession = Expression<String>("addressOfSession")
+    
     var occasionReceived = ""
     var dateReceived:[String:Int] = [:]
     var courseNameReceived = ""
