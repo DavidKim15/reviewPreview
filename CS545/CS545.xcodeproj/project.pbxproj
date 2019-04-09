@@ -24,6 +24,7 @@
 		155107FF22571D27000BFDA7 /* organizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155107FB22571D26000BFDA7 /* organizerView.swift */; };
 		1551080022571D27000BFDA7 /* organizerView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155107FC22571D26000BFDA7 /* organizerView2.swift */; };
 		1551080122571D27000BFDA7 /* studentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155107FD22571D26000BFDA7 /* studentView.swift */; };
+		156177C8225BE82C0048C83A /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156177C7225BE82C0048C83A /* SessionView.swift */; };
 		464E8FE51E470A104A63F69D /* Pods_CS545.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B176CCCCFA3D25A70691624 /* Pods_CS545.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		155107FB22571D26000BFDA7 /* organizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = organizerView.swift; sourceTree = "<group>"; };
 		155107FC22571D26000BFDA7 /* organizerView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = organizerView2.swift; sourceTree = "<group>"; };
 		155107FD22571D26000BFDA7 /* studentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = studentView.swift; sourceTree = "<group>"; };
+		156177C7225BE82C0048C83A /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		746B531FE05BDB498D25E9B6 /* Pods-CS545.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS545.debug.xcconfig"; path = "Target Support Files/Pods-CS545/Pods-CS545.debug.xcconfig"; sourceTree = "<group>"; };
 		9B176CCCCFA3D25A70691624 /* Pods_CS545.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CS545.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA776A7BD18ED9975DC0650 /* Pods-CS545.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS545.release.xcconfig"; path = "Target Support Files/Pods-CS545/Pods-CS545.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				151EB17B225994FB0086C053 /* SessionCell.swift */,
 				151EB17D225995250086C053 /* Session.swift */,
 				151EB17F2259B9D10086C053 /* dbWrapper.swift */,
+				156177C7225BE82C0048C83A /* SessionView.swift */,
 			);
 			path = CS545;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				1551080122571D27000BFDA7 /* studentView.swift in Sources */,
 				155107FE22571D27000BFDA7 /* fullView.swift in Sources */,
 				151EB17C225994FB0086C053 /* SessionCell.swift in Sources */,
+				156177C8225BE82C0048C83A /* SessionView.swift in Sources */,
 				151EB17522597E830086C053 /* fullViewTableViewController.swift in Sources */,
 				155107FF22571D27000BFDA7 /* organizerView.swift in Sources */,
 				155107CD22571CE1000BFDA7 /* AppDelegate.swift in Sources */,

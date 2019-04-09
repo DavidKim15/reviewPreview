@@ -51,6 +51,22 @@ class dbWrapper {
             print("Unable to create table")
         }
     }
+    func addSession(sess: Session) -> Int64 {
+        do {
+            let insert = sessions_table.insert(
+                session_date    <- sess.sessionDate,
+                occasion        <- sess.occasion,
+                occasion_date   <- sess.occasionDate,
+                course_name     <- sess.courseName,
+                address_of_session <- sess.addressOfSession,
+                organizer_name  <- sess.organizer)
+            let id = try db!.run(insert)
+            return id
+        } catch {
+            print("Insert failed")
+            return -1
+        }
+    }
     func addSession(sdate: String, occ: String, odate: String, cname: String, address: String, oname: String) -> Int64 {
         do {
             let insert = sessions_table.insert(
