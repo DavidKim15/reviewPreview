@@ -8,29 +8,9 @@
 
 import UIKit
 
-extension UIFont {
-    
-    func withTraits(traits:UIFontDescriptor.SymbolicTraits...) -> UIFont {
-        let descriptor = self.fontDescriptor.withSymbolicTraits(UIFontDescriptor.SymbolicTraits(traits))
-        return UIFont(descriptor: descriptor!, size: 0)
-    }
-    
-    func bold() -> UIFont {
-        return withTraits(traits: .traitBold)
-    }
-    
-    func italic() -> UIFont {
-        return withTraits(traits: .traitItalic)
-    }
-    
-    func boldItalic() -> UIFont {
-        return withTraits(traits: .traitBold, .traitItalic)
-    }
-    
-}
 
-class SessionViewHandle {
-    static var fontSize:CGFloat = 20
+class EditViewHandle {
+    static var fontSize:CGFloat = 16
     static var courseNameLabel : UILabel = {
         let lbl = UILabel()
         lbl.text = "Course Name: "
@@ -107,15 +87,14 @@ class SessionViewHandle {
         lbl.numberOfLines = 0
         return lbl
     }()
-    static var sessionCourseName : UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = .blue
+    static var sessionCourseName : UITextField = {
+        let lbl = UITextField()
+        lbl.textColor = .gray
         lbl.font = UIFont.boldSystemFont(ofSize: fontSize)
         lbl.textAlignment = .left
-        lbl.numberOfLines = 0
         return lbl
     }()
-    
+
     static var sessionDate : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
@@ -156,33 +135,10 @@ class SessionViewHandle {
         lbl.numberOfLines = 0
         return lbl
     }()
-    static var editButton: UIButton = {
-        let btn = UIButton(frame: CGRect(x: 100, y: 100,width: 100, height: 25))
-        btn.setTitle("Edit", for: .normal)
-        btn.setTitleColor(.blue,for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-//        btn.layer.cornerRadius = 5
-//        btn.layer.borderWidth = 1
-//        btn.layer.borderColor = UIColor.blue.cgColor
-//        btn.titleEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
-        return btn
-    }()
     
-    static var deleteButton: UIButton = {
-        let btn = UIButton(frame: CGRect(x: 100, y: 100,width: 100, height: 25))
-        btn.setTitle("Delete", for: .normal)
-        btn.setTitleColor(.red,for: .normal)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-//        btn.layer.cornerRadius = 5
-//        btn.layer.borderWidth = 1
-//        btn.layer.borderColor = UIColor.blue.cgColor
-//        btn.titleEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
-        return btn
-    }()
-
     
     static func setLabels(selected : Session) {
-//        SessionViewHandle.sessionCourseName.text = SessionViewHandle.sessionCourseName.text! +  selected.courseName
+        //        SessionViewHandle.sessionCourseName.text = SessionViewHandle.sessionCourseName.text! +  selected.courseName
         SessionViewHandle.sessionCourseName.text = selected.courseName
         SessionViewHandle.sessionDate.text = selected.sessionDate
         SessionViewHandle.sessionOccasion.text = selected.occasion
