@@ -200,9 +200,18 @@ class SessionView: UIViewController {
         editView.isHidden = true
     }
     @objc func editSession(sender: UIButton) {
-        print("Clicked")
-        loadEditViewIntoController()
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let organizerView = storyBoard.instantiateViewController(withIdentifier: "organizerView") as! organizerView
+        self.present(organizerView, animated: true, completion: nil)
+        // set the variables of OrganizerView
+        organizerView.courseName.text = nil
+        organizerView.organizerName.text = nil
+        
+        organizerView.courseName.text = selectedSession.courseName
+        organizerView.organizerName.text = selectedSession.organizer
+        
     }
+
     @objc func deleteSession(sender: UIButton) {
         
     }

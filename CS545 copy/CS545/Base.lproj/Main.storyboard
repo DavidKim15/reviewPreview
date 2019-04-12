@@ -91,7 +91,7 @@
         <!--Organizer View-->
         <scene sceneID="6hk-7G-WMo">
             <objects>
-                <viewController id="erc-TB-SD0" customClass="organizerView" customModule="CS545" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="organizerView" id="erc-TB-SD0" customClass="organizerView" customModule="CS545" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pyt-5q-jGt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
