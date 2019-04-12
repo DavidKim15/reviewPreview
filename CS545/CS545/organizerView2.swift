@@ -29,7 +29,7 @@ class organizerView2: UIViewController,MKMapViewDelegate,CLLocationManagerDelega
         fullViewTableViewController.receivedOccasion = receivedOccasion
         fullViewTableViewController.receivedSessionDate = receivedSessionDate
         fullViewTableViewController.receivedCourseName = receivedCourseName
-        fullViewTableViewController.received4 = userLocationInput.text!
+        fullViewTableViewController.receivedAddress = userLocationInput.text!
         fullViewTableViewController.receivedOrganizerName = receivedOrganizerName
         fullViewTableViewController.receivedOccasionDate = receivedOccasionDate
     }

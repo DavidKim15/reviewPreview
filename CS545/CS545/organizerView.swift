@@ -19,6 +19,7 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var reviewSessionDatePicker: UIDatePicker!
     //@IBOutlet weak var pickLocation: UIPickerView!
     @IBOutlet weak var organizerName: UITextField!
+    @IBOutlet weak var userInputLocation: UITextField!
     
     var pickerData: [String] = [String]()
     var occasionDate: String = ""
@@ -63,14 +64,15 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     // send data over to fullView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {// get a reference to the second view controller
-        let org2 = segue.destination as! organizerView2
+        let fullViewTableViewController = segue.destination as! fullViewTableViewController
         // set a variable in the second view controller with the String to pass
         formatReviewDate()
-        org2.receivedOccasion = occasion
-        org2.receivedSessionDate = reviewSessionDate
-        org2.receivedCourseName = courseName.text!
-        org2.receivedOrganizerName = organizerName.text!
-        org2.receivedOccasionDate = occasionDate
+        fullViewTableViewController.receivedOccasion = occasion
+        fullViewTableViewController.receivedSessionDate = reviewSessionDate
+        fullViewTableViewController.receivedCourseName = courseName.text!
+        fullViewTableViewController.receivedOrganizerName = organizerName.text!
+        fullViewTableViewController.receivedOccasionDate = occasionDate
+        fullViewTableViewController.receivedAddress = userInputLocation.text!
         
 //        fullView.delegate = self
     }
@@ -140,6 +142,11 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         reviewSessionDate += " "
         reviewSessionDate += String(reviewSessionDict["Month"]!) + "/"
         reviewSessionDate += String(reviewSessionDict["Day"]!)
+    }
+    @objc func comeBackhere(sender: UIBarButtonItem) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let SessionView = storyBoard.instantiateViewController(withIdentifier: "SessionView") as! SessionView
+        self.present(SessionView, animated: true, completion: nil)
     }
 }
 

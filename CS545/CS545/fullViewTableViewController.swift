@@ -21,7 +21,7 @@ class fullViewTableViewController: UITableViewController {
     var receivedOccasion = ""
     var receivedSessionDate = ""
     var receivedCourseName = ""
-    var received4 = ""
+    var receivedAddress = ""
     var receivedOrganizerName = ""
     var receivedOccasionDate = ""
     
@@ -37,7 +37,7 @@ class fullViewTableViewController: UITableViewController {
         occasionReceived = receivedOccasion
         dateReceived = receivedSessionDate
         courseNameReceived = receivedCourseName
-        address = received4
+        address = receivedAddress
         organizerName = receivedOrganizerName
         occasionDate = receivedOccasionDate
         

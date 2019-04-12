@@ -210,7 +210,22 @@ class SessionView: UIViewController {
         organizerView.courseName.text = selectedSession.courseName
         organizerView.organizerName.text = selectedSession.organizer
         
+//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height/4))
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 50, width: organizerView.view.frame.width, height: 300))
+        organizerView.view.addSubview(navBar)
+        
+        let navItem = UINavigationItem(title: "Edit Session")
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: nil, action: #selector(organizerView.comeBackhere));
+        navItem.leftBarButtonItem = cancelItem
+        
+        navBar.setItems([navItem], animated: false)
+        
     }
+//    @objc func comeBackhere(sender: UIBarButtonItem) {
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let SessionView = storyBoard.instantiateViewController(withIdentifier: "SessionView") as! SessionView
+//        self.present(SessionView, animated: true, completion: nil)
+//    }
 
     @objc func deleteSession(sender: UIButton) {
         
