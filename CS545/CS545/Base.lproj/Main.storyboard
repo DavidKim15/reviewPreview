@@ -207,7 +207,7 @@
         <!--Full View Table View Controller-->
         <scene sceneID="7bh-JP-oPe">
             <objects>
-                <tableViewController id="vQ3-HF-mjd" customClass="fullViewTableViewController" customModule="CS545" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="fullViewTableViewController" id="vQ3-HF-mjd" customClass="fullViewTableViewController" customModule="CS545" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zw0-60-dkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,10 +246,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="wnr-9Y-8v0"/>
+                    <connections>
+                        <segue destination="erc-TB-SD0" kind="push" identifier="editOrganizerView" id="oxA-DP-59z"/>
+                        <segue destination="vQ3-HF-mjd" kind="push" identifier="deletedSession" id="hkb-7z-Ops"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FM-S1-g6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3369" y="1012"/>
+            <point key="canvasLocation" x="3271" y="1012"/>
         </scene>
         <!--Organizer View2-->
         <scene sceneID="Pew-df-yUa">
@@ -326,6 +330,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Bfj-xU-P6A"/>
+        <segue reference="hkb-7z-Ops"/>
+        <segue reference="oxA-DP-59z"/>
     </inferredMetricsTieBreakers>
 </document>

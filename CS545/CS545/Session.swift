@@ -14,4 +14,6 @@ struct Session {
     var addressOfSession : String
     var occasion : String
     var organizer : String
+    var dateObjOccasion : Date?
+    var dateObjSession : Date?
 }

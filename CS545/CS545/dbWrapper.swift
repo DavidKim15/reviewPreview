@@ -23,6 +23,8 @@ class dbWrapper {
     private let course_name = Expression<String>("course_name")
     private let address_of_session = Expression<String>("address_of_session")
     private let organizer_name = Expression<String>("organizer_name")
+    private let date_obj_occasion = Expression<Date>("date_obj_occasion")
+    private let date_obj_session = Expression<Date>("date_obj_session")
     
     private init() {
         let path = NSSearchPathForDirectoriesInDomains(
@@ -46,6 +48,8 @@ class dbWrapper {
                 t.column(course_name)
                 t.column(address_of_session)
                 t.column(organizer_name)
+                t.column(date_obj_occasion)
+                t.column(date_obj_session)
             })
         } catch {
             print("Unable to create table")
@@ -59,7 +63,10 @@ class dbWrapper {
                 occasion_date   <- sess.occasionDate,
                 course_name     <- sess.courseName,
                 address_of_session <- sess.addressOfSession,
-                organizer_name  <- sess.organizer)
+                organizer_name  <- sess.organizer,
+                date_obj_occasion <- sess.dateObjOccasion!,
+                date_obj_session <- sess.dateObjSession!)
+            
             let id = try db!.run(insert)
             return id
         } catch {
@@ -67,7 +74,7 @@ class dbWrapper {
             return -1
         }
     }
-    func addSession(sdate: String, occ: String, odate: String, cname: String, address: String, oname: String) -> Int64 {
+    func addSession(sdate: String, occ: String, odate: String, cname: String, address: String, oname: String, dOO : Date, dOS : Date) -> Int64 {
         do {
             let insert = sessions_table.insert(
                 session_date        <- sdate,
@@ -75,7 +82,9 @@ class dbWrapper {
                 occasion_date       <- odate,
                 course_name         <- cname,
                 address_of_session  <- address,
-                organizer_name      <- oname)
+                organizer_name      <- oname,
+                date_obj_occasion   <- dOO,
+                date_obj_session    <- dOS)
             let id = try db!.run(insert)
             return id
         } catch {
@@ -83,23 +92,46 @@ class dbWrapper {
             return -1
         }
     }
-    func getSessions() -> [Session] {
-        var sessions = [Session]()
+    func getSessions() -> [(Session,Int64)] {
+        var sessions = [(Session,Int64)]()
         do {
             for session in try db!.prepare(self.sessions_table) {
-                sessions.append(Session(
+                sessions.append((
+                    (Session(
+                        courseName      : session[course_name],
+                        sessionDate     : session[session_date],
+                        occasionDate    : session[occasion_date],
+                        addressOfSession: session[address_of_session],
+                        occasion        : session[occasion],
+                        organizer       : session[organizer_name],
+                        dateObjOccasion : session[date_obj_occasion],
+                        dateObjSession  : session[date_obj_session])),session[id]))
+                print("SESSION ID : " + String(session[id]))
+            }
+        } catch {
+            print("Select failed")
+        }
+        return sessions
+    }
+    func getSessionById(sid: Int64) -> Session? {
+        let sessions = sessions_table.filter(id == sid)
+        var ret_this : Session?
+        do {
+            for session in try db!.prepare(sessions) {
+                ret_this =  Session(
                     courseName      : session[course_name],
                     sessionDate     : session[session_date],
                     occasionDate    : session[occasion_date],
                     addressOfSession: session[address_of_session],
                     occasion        : session[occasion],
-                    organizer       : session[organizer_name]))
+                    organizer       : session[organizer_name],
+                    dateObjOccasion : session[date_obj_occasion],
+                    dateObjSession  : session[date_obj_session])
             }
         } catch {
-            print("Select failed")
+            print("No such session")
         }
-        
-        return sessions
+        return ret_this
     }
     func deleteSession(sid: Int64) -> Bool {
         do {
@@ -121,6 +153,8 @@ class dbWrapper {
                 address_of_session  <- newSession.addressOfSession,
                 occasion            <- newSession.occasion,
                 organizer_name      <- newSession.organizer,
+                date_obj_occasion   <- newSession.dateObjOccasion!,
+                date_obj_session    <- newSession.dateObjSession!
                 ])
             if try db!.run(update) > 0 {
                 return true

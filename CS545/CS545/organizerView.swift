@@ -13,19 +13,23 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     @IBOutlet weak var pickOccasion: UIPickerView!
     
-    @IBOutlet weak var occasionText: UILabel!
+    @IBOutlet weak var occasionText: UILabel?
     @IBOutlet weak var datePicker = UIDatePicker()
-    @IBOutlet weak var courseName: UITextField!
-    @IBOutlet weak var reviewSessionDatePicker: UIDatePicker!
+    @IBOutlet weak var courseName: UITextField?
+    @IBOutlet weak var reviewSessionDatePicker = UIDatePicker()
     //@IBOutlet weak var pickLocation: UIPickerView!
-    @IBOutlet weak var organizerName: UITextField!
-    @IBOutlet weak var userInputLocation: UITextField!
-    
+    @IBOutlet weak var organizerName: UITextField?
+    @IBOutlet weak var userInputLocation: UITextField?
+
     var pickerData: [String] = [String]()
     var occasionDate: String = ""
     var reviewSessionDate: String = ""
     var occasion: String = ""
     var reviewSessionDict: [String:Int] = [:]
+    var dateObjOccasion : Date?
+    var dateObjSession : Date?
+    
+    var editingSelectedSession : (Session,Int64) = (Session(courseName: "",sessionDate: "",occasionDate: "",addressOfSession: "",occasion: "",organizer: "", dateObjOccasion: Date(), dateObjSession : Date()), -1)
     
     let mapWeekday : [Int:String] = [
         1: "Sunday",
@@ -62,37 +66,50 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         23:11
     ]
     
-    // send data over to fullView
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {// get a reference to the second view controller
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //get a reference to the second view controller
         let fullViewTableViewController = segue.destination as! fullViewTableViewController
-        // set a variable in the second view controller with the String to pass
+        //set a variable in the second view controller with the String to pass
         formatReviewDate()
         fullViewTableViewController.receivedOccasion = occasion
         fullViewTableViewController.receivedSessionDate = reviewSessionDate
-        fullViewTableViewController.receivedCourseName = courseName.text!
-        fullViewTableViewController.receivedOrganizerName = organizerName.text!
+        fullViewTableViewController.receivedCourseName = courseName?.text ?? "N/A"
+        fullViewTableViewController.receivedOrganizerName = organizerName?.text ?? "N/A"
         fullViewTableViewController.receivedOccasionDate = occasionDate
-        fullViewTableViewController.receivedAddress = userInputLocation.text!
-        
-//        fullView.delegate = self
+        fullViewTableViewController.receivedAddress = userInputLocation?.text ?? "N/A"
+        fullViewTableViewController.dateObjOccasion = dateObjOccasion
+        fullViewTableViewController.dateObjSession = dateObjSession
+        fullViewTableViewController.receivedId = editingSelectedSession.1
     }
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        organizerName?.text = editingSelectedSession.0.organizer
+        courseName?.text = editingSelectedSession.0.courseName
+        userInputLocation?.text = editingSelectedSession.0.addressOfSession
+        occasionText?.text = editingSelectedSession.0.occasion
+        reviewSessionDatePicker?.setDate(editingSelectedSession.0.dateObjSession!, animated: false)
+        datePicker?.setDate(editingSelectedSession.0.dateObjOccasion!, animated: false)
+        
+        
         self.pickOccasion.delegate = self
         self.pickOccasion.dataSource = self
         pickerData = ["Midterm", "Final", "Exam"]
         
         datePicker?.datePickerMode = UIDatePicker.Mode.date
         datePicker?.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
-        reviewSessionDatePicker.addTarget(self, action: #selector(dateChanged2(_:)), for: .valueChanged)
+        reviewSessionDatePicker?.addTarget(self, action: #selector(dateChanged2(_:)), for: .valueChanged)
     }
+    
     @objc func dateChanged(_ sender: UIDatePicker) {
         let components = Calendar.current.dateComponents([.year, .month, .day], from: sender.date)
         if let day = components.day, let month = components.month, let year = components.year {
             occasionDate = ("\(month)/\(day)/\(year)")
             print(occasionDate)
+            dateObjOccasion = Calendar.current.date(from: components)
         }
     }
     @objc func dateChanged2(_ sender: UIDatePicker) {
@@ -103,6 +120,7 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         if let day = components.day, let month = components.month, let weekday = components.weekday, let hour = components.hour, let minute = components.minute {
             reviewSessionDict = ["Weekday" : weekday, "Month": month, "Day": day, "Hour" : hour, "Minute" : minute]
             print(reviewSessionDict)
+            dateObjSession = Calendar.current.date(from : components)
         }
     }
     override func didReceiveMemoryWarning() {
@@ -121,7 +139,7 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         occasion = pickerData[row]
-        occasionText.text = "When is this " + pickerData[row] + "?"
+        occasionText?.text = "When is this " + pickerData[row] + "?"
         return pickerData[row]
     }
     func formatReviewDate() {
@@ -143,9 +161,11 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         reviewSessionDate += String(reviewSessionDict["Month"]!) + "/"
         reviewSessionDate += String(reviewSessionDict["Day"]!)
     }
-    @objc func comeBackhere(sender: UIBarButtonItem) {
+    @objc func comeBackHere(sender: UIBarButtonItem) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let SessionView = storyBoard.instantiateViewController(withIdentifier: "SessionView") as! SessionView
+//        SessionView.selectedSession = Session(  courseName = courseName.text!,
+//                                                sessionDate = )
         self.present(SessionView, animated: true, completion: nil)
     }
 }
