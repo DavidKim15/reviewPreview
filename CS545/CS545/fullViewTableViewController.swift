@@ -48,7 +48,7 @@ class fullViewTableViewController: UITableViewController {
         
         createSessionArray()
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.loadList), name: Notification.Name("Load"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.loadList), name: Notification.Name("Load"), object: nil)
 
         
         // Uncomment the following line to preserve selection between presentations
@@ -61,9 +61,9 @@ class fullViewTableViewController: UITableViewController {
 //    override func viewDidAppear(_ animated: Bool) {
 //        super.tableView.reloadData()
 //        self.tableView.reloadData()
-//        super.viewDidLoad()
 //    }
     @objc func loadList(){
+        createSessionArray()
         tableView.reloadData();
     }
 
