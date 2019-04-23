@@ -109,7 +109,8 @@ class SessionViewHandle {
     }()
     static var sessionCourseName : UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .blue
+//        lbl.textColor = .blue
+        lbl.textColor = UIColor(rgb: 0xff7f00)
         lbl.font = UIFont.boldSystemFont(ofSize: fontSize)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
@@ -159,7 +160,8 @@ class SessionViewHandle {
     static var editButton: UIButton = {
         let btn = UIButton(frame: CGRect(x: 100, y: 100,width: 100, height: 25))
         btn.setTitle("Edit", for: .normal)
-        btn.setTitleColor(.blue,for: .normal)
+//        btn.setTitleColor(.blue,for: .normal)
+        btn.setTitleColor(UIColor(rgb: 0x007aff), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
 //        btn.layer.cornerRadius = 5
 //        btn.layer.borderWidth = 1

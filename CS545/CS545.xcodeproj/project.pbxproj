@@ -13,9 +13,9 @@
 		151EB17C225994FB0086C053 /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EB17B225994FB0086C053 /* SessionCell.swift */; };
 		151EB17E225995250086C053 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EB17D225995250086C053 /* Session.swift */; };
 		151EB1802259B9D10086C053 /* dbWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EB17F2259B9D10086C053 /* dbWrapper.swift */; };
+		1536D72522682845004D71C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1536D72322682845004D71C9 /* Main.storyboard */; };
 		155107CD22571CE1000BFDA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155107CC22571CE1000BFDA7 /* AppDelegate.swift */; };
 		155107CF22571CE1000BFDA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155107CE22571CE1000BFDA7 /* ViewController.swift */; };
-		155107D222571CE1000BFDA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 155107D022571CE1000BFDA7 /* Main.storyboard */; };
 		155107D422571CE3000BFDA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 155107D322571CE3000BFDA7 /* Assets.xcassets */; };
 		155107D722571CE3000BFDA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 155107D522571CE3000BFDA7 /* LaunchScreen.storyboard */; };
 		155107E222571CE3000BFDA7 /* CS545Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155107E122571CE3000BFDA7 /* CS545Tests.swift */; };
@@ -26,6 +26,7 @@
 		1551080122571D27000BFDA7 /* studentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155107FD22571D26000BFDA7 /* studentView.swift */; };
 		156177C8225BE82C0048C83A /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156177C7225BE82C0048C83A /* SessionView.swift */; };
 		1578B84B225EC70800EA76DE /* EditViewHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1578B84A225EC70800EA76DE /* EditViewHandle.swift */; };
+		157FF0F7226EBC8D0047F7E9 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157FF0F6226EBC8D0047F7E9 /* Styles.swift */; };
 		15AABF25225D3B9E001384F9 /* SessionViewHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AABF24225D3B9E001384F9 /* SessionViewHandle.swift */; };
 		464E8FE51E470A104A63F69D /* Pods_CS545.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B176CCCCFA3D25A70691624 /* Pods_CS545.framework */; };
 /* End PBXBuildFile section */
@@ -54,10 +55,10 @@
 		151EB17B225994FB0086C053 /* SessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
 		151EB17D225995250086C053 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		151EB17F2259B9D10086C053 /* dbWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dbWrapper.swift; sourceTree = "<group>"; };
+		1536D72422682845004D71C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		155107C922571CE1000BFDA7 /* CS545.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CS545.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		155107CC22571CE1000BFDA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		155107CE22571CE1000BFDA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		155107D122571CE1000BFDA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		155107D322571CE3000BFDA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		155107D622571CE3000BFDA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		155107D822571CE3000BFDA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		155107FD22571D26000BFDA7 /* studentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = studentView.swift; sourceTree = "<group>"; };
 		156177C7225BE82C0048C83A /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		1578B84A225EC70800EA76DE /* EditViewHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewHandle.swift; sourceTree = "<group>"; };
+		157FF0F6226EBC8D0047F7E9 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		15AABF24225D3B9E001384F9 /* SessionViewHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewHandle.swift; sourceTree = "<group>"; };
 		746B531FE05BDB498D25E9B6 /* Pods-CS545.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS545.debug.xcconfig"; path = "Target Support Files/Pods-CS545/Pods-CS545.debug.xcconfig"; sourceTree = "<group>"; };
 		9B176CCCCFA3D25A70691624 /* Pods_CS545.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CS545.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,8 +138,8 @@
 				155107FC22571D26000BFDA7 /* organizerView2.swift */,
 				155107FD22571D26000BFDA7 /* studentView.swift */,
 				155107CE22571CE1000BFDA7 /* ViewController.swift */,
-				155107D022571CE1000BFDA7 /* Main.storyboard */,
 				155107D322571CE3000BFDA7 /* Assets.xcassets */,
+				1536D72322682845004D71C9 /* Main.storyboard */,
 				155107D522571CE3000BFDA7 /* LaunchScreen.storyboard */,
 				155107D822571CE3000BFDA7 /* Info.plist */,
 				151EB17322597E830086C053 /* fullViewTableViewController.swift */,
@@ -149,6 +151,7 @@
 				156177C7225BE82C0048C83A /* SessionView.swift */,
 				15AABF24225D3B9E001384F9 /* SessionViewHandle.swift */,
 				1578B84A225EC70800EA76DE /* EditViewHandle.swift */,
+				157FF0F6226EBC8D0047F7E9 /* Styles.swift */,
 			);
 			path = CS545;
 			sourceTree = "<group>";
@@ -297,7 +300,7 @@
 				155107D722571CE3000BFDA7 /* LaunchScreen.storyboard in Resources */,
 				151EB17622597E830086C053 /* fullViewTableViewController.xib in Resources */,
 				155107D422571CE3000BFDA7 /* Assets.xcassets in Resources */,
-				155107D222571CE1000BFDA7 /* Main.storyboard in Resources */,
+				1536D72522682845004D71C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +378,7 @@
 				1551080022571D27000BFDA7 /* organizerView2.swift in Sources */,
 				1578B84B225EC70800EA76DE /* EditViewHandle.swift in Sources */,
 				1551080122571D27000BFDA7 /* studentView.swift in Sources */,
+				157FF0F7226EBC8D0047F7E9 /* Styles.swift in Sources */,
 				15AABF25225D3B9E001384F9 /* SessionViewHandle.swift in Sources */,
 				155107FE22571D27000BFDA7 /* fullView.swift in Sources */,
 				151EB17C225994FB0086C053 /* SessionCell.swift in Sources */,
@@ -418,10 +422,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		155107D022571CE1000BFDA7 /* Main.storyboard */ = {
+		1536D72322682845004D71C9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				155107D122571CE1000BFDA7 /* Base */,
+				1536D72422682845004D71C9 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

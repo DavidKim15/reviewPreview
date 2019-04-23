@@ -87,12 +87,15 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        organizerName?.text = editingSelectedSession.0.organizer
-        courseName?.text = editingSelectedSession.0.courseName
-        userInputLocation?.text = editingSelectedSession.0.addressOfSession
-        occasionText?.text = editingSelectedSession.0.occasion
+        organizerName?.text             = editingSelectedSession.0.organizer
+        courseName?.text                = editingSelectedSession.0.courseName
+        userInputLocation?.text         = editingSelectedSession.0.addressOfSession
+        occasionText?.text              = editingSelectedSession.0.occasion
         reviewSessionDatePicker?.setDate(editingSelectedSession.0.dateObjSession!, animated: false)
         datePicker?.setDate(editingSelectedSession.0.dateObjOccasion!, animated: false)
+        
+        // set default date values to now
+        initializeDateStuff()
         
         
         self.pickOccasion.delegate = self
@@ -142,7 +145,29 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         occasionText?.text = "When is this " + pickerData[row] + "?"
         return pickerData[row]
     }
+    func initializeDateStuff() {
+        dateObjOccasion = Date()
+        dateObjSession = Date()
+        
+        // take care of session date
+        var components = Calendar.current.dateComponents([.day,.month,.weekday,.hour,.minute,], from: dateObjSession!)
+        if let day = components.day, let month = components.month, let weekday = components.weekday, let hour = components.hour, let minute = components.minute {
+            reviewSessionDict = ["Weekday" : weekday, "Month": month, "Day": day, "Hour" : hour, "Minute" : minute]
+        }
+        formatReviewDate()
+        
+        // take care of occasion date
+        components = Calendar.current.dateComponents([.year, .month, .day], from: dateObjOccasion!)
+        if let day = components.day, let month = components.month, let year = components.year {
+            occasionDate = ("\(month)/\(day)/\(year)")
+        }
+    }
     func formatReviewDate() {
+        reviewSessionDate = ""
+        reviewSessionDate += String(reviewSessionDict["Month"]!) + "/"
+        reviewSessionDate += String(reviewSessionDict["Day"]!)
+        reviewSessionDate += " "
+        
         reviewSessionDate += mapWeekday[reviewSessionDict["Weekday"]!]! + ", "
         reviewSessionDate += String(mapMilitaryTime[reviewSessionDict["Hour"]!]!) + ":"
         if (reviewSessionDict["Minute"]! < 10) {
@@ -157,9 +182,7 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         else {
             reviewSessionDate += "PM"
         }
-        reviewSessionDate += " "
-        reviewSessionDate += String(reviewSessionDict["Month"]!) + "/"
-        reviewSessionDate += String(reviewSessionDict["Day"]!)
+
     }
     @objc func comeBackHere(sender: UIBarButtonItem) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

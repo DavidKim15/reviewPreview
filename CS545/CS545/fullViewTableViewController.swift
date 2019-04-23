@@ -30,12 +30,14 @@ class fullViewTableViewController: UITableViewController {
     
     var sessions : [(Session,Int64)] = [(Session,Int64)]()
     
+    
 //    ----------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(SessionCell.self, forCellReuseIdentifier: "cellIdentifier")
 
         self.title = "Review Sessions"
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(rgb: 0xff7f00)]
         
         occasionReceived = receivedOccasion
         dateReceived = receivedSessionDate
@@ -46,11 +48,23 @@ class fullViewTableViewController: UITableViewController {
         
         createSessionArray()
         
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.loadList), name: Notification.Name("Load"), object: nil)
+
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.tableView.reloadData()
+//        self.tableView.reloadData()
+//        super.viewDidLoad()
+//    }
+    @objc func loadList(){
+        tableView.reloadData();
     }
 
     // MARK: - Table view data source
@@ -120,7 +134,7 @@ class fullViewTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //Choose your custom row height
-        return 75.0;
+        return 100.0;
     }
     
     
@@ -136,6 +150,8 @@ class fullViewTableViewController: UITableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("From tableview")
+        print(self.navigationController?.viewControllers)
         if segue.identifier == "showSessionSelected" {
             let SessionView = segue.destination as! SessionView
             SessionView.selectedSession = selected

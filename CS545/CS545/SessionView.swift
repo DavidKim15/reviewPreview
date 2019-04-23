@@ -203,6 +203,8 @@ class SessionView: UIViewController {
         self.performSegue(withIdentifier: "editOrganizerView", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("From session_view");
+        print(self.navigationController?.viewControllers)
         if segue.identifier == "editOrganizerView" {
             if let organizerView = segue.destination as? organizerView {
                 organizerView.editingSelectedSession = selectedSession     
@@ -212,7 +214,10 @@ class SessionView: UIViewController {
 
     @objc func deleteSession(sender: UIButton) {
         if dbWrapper.instance.deleteSession(sid: selectedSession.1) {
-            self.performSegue(withIdentifier: "deletedSession", sender:self)
+//            self.performSegue(withIdentifier: "deletedSession", sender:self)
+//            NotificationCenter.default.post(name: Notification.Name("Load"), object: nil)
+            self.navigationController?.popViewController(animated: true)
+//            self.performSegue(withIdentifier: "deleteSession", sender: self)
         }
     }
     
