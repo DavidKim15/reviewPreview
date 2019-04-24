@@ -110,7 +110,8 @@ class SessionViewHandle {
     static var sessionCourseName : UILabel = {
         let lbl = UILabel()
 //        lbl.textColor = .blue
-        lbl.textColor = UIColor(rgb: 0xff7f00)
+//        lbl.textColor = UIColor(rgb: 0xff7f00)
+        lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.boldSystemFont(ofSize: fontSize)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0

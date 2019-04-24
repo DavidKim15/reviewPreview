@@ -35,7 +35,7 @@
                                 <color key="textColor" red="1" green="0.49803921568627452" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="real" id="RzF-ay-zDk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" id="RzF-ay-zDk">
                                 <rect key="frame" x="110" y="210" width="177" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1088.8" y="146.17691154422789"/>
+            <point key="canvasLocation" x="1476" y="70"/>
         </scene>
         <!--Student View-->
         <scene sceneID="ETJ-oz-2Yp">
@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKI-fw-6g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2303" y="146"/>
+            <point key="canvasLocation" x="2151" y="1784"/>
         </scene>
         <!--Organizer View-->
         <scene sceneID="6hk-7G-WMo">
@@ -203,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nku-ZM-PPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="1012"/>
+            <point key="canvasLocation" x="1089" y="914"/>
         </scene>
         <!--Full View Table View Controller-->
         <scene sceneID="7bh-JP-oPe">
@@ -235,7 +235,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gh-mx-3TT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2302" y="1012"/>
+            <point key="canvasLocation" x="1921" y="915"/>
         </scene>
         <!--Session View-->
         <scene sceneID="rsp-vg-aTw">
@@ -253,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FM-S1-g6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3751" y="1012"/>
+            <point key="canvasLocation" x="2783" y="913"/>
         </scene>
         <!--Organizer View2-->
         <scene sceneID="Pew-df-yUa">
@@ -308,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzS-vU-t4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1407" y="1750"/>
+            <point key="canvasLocation" x="1314" y="1783"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x5L-N8-ffy">
@@ -326,11 +326,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wvv-o8-768" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22" y="146"/>
+            <point key="canvasLocation" x="334" y="70"/>
         </scene>
     </scenes>
     <resources>
-        <image name="real" width="60" height="60"/>
+        <image name="logo" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zm6-38-icO"/>
