@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let navigationBarAppearace = UINavigationBar.appearance()
         
+        
         navigationBarAppearace.tintColor = .white
 //        navigationBarAppearace.barTintColor = UIColor(rgb: 0xff7f00)
         navigationBarAppearace.barTintColor = UIColor(rgb: 0xAE2A2A)
@@ -25,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // change navigation item title color
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(rgb: 0xffffff)]
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        
+        
         return true
     }
 

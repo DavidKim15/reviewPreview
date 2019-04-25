@@ -93,7 +93,8 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         occasionText?.text              = editingSelectedSession.0.occasion
         reviewSessionDatePicker?.setDate(editingSelectedSession.0.dateObjSession!, animated: false)
         datePicker?.setDate(editingSelectedSession.0.dateObjOccasion!, animated: false)
-        
+        self.title = "Create Review Session"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(moveToRoot))
         // set default date values to now
         initializeDateStuff()
         
@@ -125,6 +126,9 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             print(reviewSessionDict)
             dateObjSession = Calendar.current.date(from : components)
         }
+    }
+    @objc func moveToRoot() {
+        self.navigationController!.popToRootViewController(animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -16,6 +16,7 @@ class SessionView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(moveToRoot))
         // Do any additional setup after loading the view, typically from a nib.
 //        editView.isHidden = true
         initializePage()
@@ -193,7 +194,9 @@ class SessionView: UIViewController {
         okayButton.addTarget(self, action: #selector(loadEdits), for: .touchUpInside)
     }
     
-    
+    @objc func moveToRoot() {
+ self.navigationController!.popToRootViewController(animated: true)
+    }
     @objc func loadEdits(sender:UIButton) {
         // do whatever you want
         // make view disappears again, or remove from its superview

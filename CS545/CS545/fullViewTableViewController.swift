@@ -37,6 +37,7 @@ class fullViewTableViewController: UITableViewController {
         tableView.register(SessionCell.self, forCellReuseIdentifier: "cellIdentifier")
 
         self.title = "Review Sessions"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(moveToRoot))
 //        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(rgb: 0xff7f00)]
         
         occasionReceived = receivedOccasion
@@ -58,10 +59,9 @@ class fullViewTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.tableView.reloadData()
-//        self.tableView.reloadData()
-//    }
+    @objc func moveToRoot() {
+        self.navigationController!.popToRootViewController(animated: true)
+    }
     @objc func loadList(){
         createSessionArray()
         tableView.reloadData();

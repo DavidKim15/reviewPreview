@@ -18,6 +18,7 @@ class SessionsForCourse: UITableViewController {
         super.viewDidLoad()
         tableView.register(SessionCell.self, forCellReuseIdentifier: "cellIdentifier2")
         self.title = "Review Sessions For \(selectedCourse)"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(moveToRoot))
         loadSessionsForSelected()
 
         // Uncomment the following line to preserve selection between presentations
@@ -25,6 +26,9 @@ class SessionsForCourse: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    @objc func moveToRoot() {
+        self.navigationController!.popToRootViewController(animated: true)
     }
     func loadSessionsForSelected() {
         sessionsForCourse = dbWrapper.instance.getSessionsByCourseName(cn: selectedCourse)

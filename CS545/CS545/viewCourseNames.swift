@@ -18,6 +18,7 @@ class ViewCourseNames: UITableViewController {
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
         tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "DefaultCell")
         self.title = "Available Courses"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(moveToRoot))
         loadCourseNames()
         
         // Uncomment the following line to preserve selection between presentations
@@ -25,6 +26,9 @@ class ViewCourseNames: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    @objc func moveToRoot() {
+        self.navigationController!.popToRootViewController(animated: true)
     }
 
     // MARK: - Table view data source
