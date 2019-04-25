@@ -129,8 +129,13 @@ class fullViewTableViewController: UITableViewController {
             print(rowid)
         }
         sessions = dbWrapper.instance.getSessions()
-//        sessions.append(Session(courseName: "CS 115",sessionDate: "01 01 2019",occasionDate: "01 03 2019", addressOfSession: "BC 120",occasion: "Exam", organizer: "Ham"))
-//        sessions.append(Session(courseName: "CS 334",sessionDate: "03 14 2019",occasionDate: "03 15 2019", addressOfSession: "Lambda House",occasion: "Midterm", organizer: "Bobby"))
+        sessions = sessions.sorted (by: { (arg0, arg1) -> Bool in
+            
+            let (fSession, _) = arg0
+            let (sSession, _) = arg1
+            
+            return fSession.courseName < sSession.courseName
+        })
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //Choose your custom row height

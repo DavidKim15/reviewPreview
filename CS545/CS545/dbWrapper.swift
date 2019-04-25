@@ -113,6 +113,41 @@ class dbWrapper {
         }
         return sessions
     }
+    func getSessionsByCourseName(cn : String) -> [(Session,Int64)] {
+        var sessions = [(Session,Int64)]()
+        do {
+            for session in try db!.prepare(self.sessions_table) {
+                if session[course_name] == cn {
+                    sessions.append((
+                        (Session(
+                            courseName      : session[course_name],
+                            sessionDate     : session[session_date],
+                            occasionDate    : session[occasion_date],
+                            addressOfSession: session[address_of_session],
+                            occasion        : session[occasion],
+                            organizer       : session[organizer_name],
+                            dateObjOccasion : session[date_obj_occasion],
+                            dateObjSession  : session[date_obj_session])),session[id]))
+                }
+            }
+        } catch {
+            print("Select failed")
+        }
+        return sessions
+    }
+    func getCourseNames() -> [String] {
+        var sessions_ret = [String]()
+        do {
+            for session in try db!.prepare(self.sessions_table) {
+                if !sessions_ret.contains(session[course_name]) {
+                    sessions_ret.append(session[course_name])
+                }
+            }
+        } catch {
+            print("Select failed")
+        }
+        return sessions_ret
+    }
     func getSessionById(sid: Int64) -> Session? {
         let sessions = sessions_table.filter(id == sid)
         var ret_this : Session?
