@@ -219,7 +219,7 @@ class SessionView: UIViewController {
         if dbWrapper.instance.deleteSession(sid: selectedSession.1) {
 //            self.performSegue(withIdentifier: "deletedSession", sender:self)
             NotificationCenter.default.post(name: Notification.Name("Load"), object: nil)
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: false)
 //            self.performSegue(withIdentifier: "deleteSession", sender: self)
         }
     }

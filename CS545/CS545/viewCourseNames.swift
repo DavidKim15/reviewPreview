@@ -21,11 +21,17 @@ class ViewCourseNames: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(moveToRoot))
         loadCourseNames()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.loadList), name: Notification.Name("Load"), object: nil)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    @objc func loadList() {
+        loadCourseNames()
+        tableView.reloadData()
     }
     @objc func moveToRoot() {
         self.navigationController!.popToRootViewController(animated: true)
