@@ -54,7 +54,7 @@ class SessionView: UIViewController {
                                                         SessionViewHandle.addressLabel])
         labelStack.distribution = .equalSpacing
         labelStack.axis = .vertical
-        labelStack.alignment = .trailing
+        labelStack.alignment = .leading
         //        labelStack.spacing = 5
         self.view!.addSubview(labelStack)
         labelStack.anchor(top: self.view.topAnchor,

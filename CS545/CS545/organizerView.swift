@@ -83,6 +83,17 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         fullViewTableViewController.receivedId = editingSelectedSession.1
     }
  
+//    @IBAction func navigate_validate(_ sender: Any) {
+//        if organizerName?.text == "" && courseName?.text == "" {
+//            organizerName?.placeholder = "Enter a name!"
+//            courseName?.placeholder = "Enter a course name!"
+//        }
+//        else {
+//            let ft = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "fullViewTableViewController") as UIViewController
+//            self.navigationController?.pushViewController(ft, animated: true)
+//        }
+//
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

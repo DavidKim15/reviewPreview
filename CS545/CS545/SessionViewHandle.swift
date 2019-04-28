@@ -33,61 +33,73 @@ class SessionViewHandle {
     static var fontSize:CGFloat = 20
     static var courseNameLabel : UILabel = {
         let lbl = UILabel()
-        lbl.text = "Course Name: "
-        lbl.textColor = .black
+        lbl.text = "     Course Name: "
+//        lbl.textColor = .black
+        lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
+//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
     static var sessionDateLabel : UILabel = {
         let lbl = UILabel()
-        lbl.text = "Session Date: "
-        lbl.textColor = .black
+        lbl.text = "     Session Date: "
+//        lbl.textColor = .black
+        lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
+//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
     static var occasionLabel : UILabel = {
         let lbl = UILabel()
-        lbl.text = "Occasion: "
-        lbl.textColor = .black
+        lbl.text = "     Occasion: "
+//        lbl.textColor = .black
+        lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
+//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
     static var occasionDateLabel : UILabel = {
         let lbl = UILabel()
-        lbl.text = "Occasion Date: "
-        lbl.textColor = .black
+        lbl.text = "     Occasion Date: "
+//        lbl.textColor = .black
+        lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
+//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
     static var addressLabel : UILabel = {
         let lbl = UILabel()
-        lbl.text = "Location: "
-        lbl.textColor = .black
+        lbl.text = "     Location: "
+//        lbl.textColor = .black
+        lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
+//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
     static var organizerLabel : UILabel = {
         let lbl = UILabel()
-        lbl.text = "Organizer: "
-        lbl.textColor = .black
+        lbl.text = "     Organizer: "
+//        lbl.textColor = .black
+        lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
+//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
@@ -109,10 +121,10 @@ class SessionViewHandle {
     }()
     static var sessionCourseName : UILabel = {
         let lbl = UILabel()
-//        lbl.textColor = .blue
+        lbl.textColor = .black
 //        lbl.textColor = UIColor(rgb: 0xff7f00)
-        lbl.textColor = UIColor(rgb: 0xAE2A2A)
-        lbl.font = UIFont.boldSystemFont(ofSize: fontSize)
+//        lbl.textColor = UIColor(rgb: 0xAE2A2A)
+        lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
         return lbl
