@@ -66,7 +66,7 @@ class ViewCourseNames: UITableViewController {
         cell.textLabel?.text = "\(courseName)"
         cell.detailTextLabel?.text =  "Number of Sessions: \(count)"
         cell.textLabel?.textColor = UIColor(rgb: 0xAE2A2A)
-        cell.detailTextLabel?.textColor = .gray
+        cell.detailTextLabel?.textColor = UIColor(rgb: 0x515151)
 
         return cell
     }

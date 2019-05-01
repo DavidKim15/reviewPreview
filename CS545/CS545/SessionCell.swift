@@ -25,7 +25,7 @@ class SessionCell : UITableViewCell {
     
     private let sessionDate : UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .gray
+        lbl.textColor = UIColor(rgb: 0x515151)
 //        lbl.textColor = UIColor(rgb: 0x007aff)
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.textAlignment = .left
@@ -34,7 +34,7 @@ class SessionCell : UITableViewCell {
     }()
     private let sessionOccasionDate : UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .gray
+        lbl.textColor = UIColor(rgb: 0x515151)
 //        lbl.textColor = UIColor(rgb: 0x007aff)
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.textAlignment = .left
@@ -43,7 +43,7 @@ class SessionCell : UITableViewCell {
     }()
     private let sessionAddress : UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .gray
+        lbl.textColor = UIColor(rgb: 0x515151)
 //        lbl.textColor = UIColor(rgb: 0x007aff)
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.textAlignment = .left
@@ -52,7 +52,7 @@ class SessionCell : UITableViewCell {
     }()
     private let sessionOccasion : UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .gray
+        lbl.textColor = UIColor(rgb: 0x515151)
 //        lbl.textColor = UIColor(rgb: 0x007aff)
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.textAlignment = .left
@@ -61,7 +61,7 @@ class SessionCell : UITableViewCell {
     }()
     private let sessionOrganizer : UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .gray
+        lbl.textColor = UIColor(rgb: 0x515151)
 //        lbl.textColor = UIColor(rgb: 0x007aff)
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.textAlignment = .left
