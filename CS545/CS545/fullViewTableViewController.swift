@@ -30,15 +30,12 @@ class fullViewTableViewController: UITableViewController {
     
     var sessions : [(Session,Int64)] = [(Session,Int64)]()
     
-    
-//    ----------------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(SessionCell.self, forCellReuseIdentifier: "cellIdentifier")
 
         self.title = "Review Sessions"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(moveToRoot))
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(rgb: 0xff7f00)]
         
         occasionReceived = receivedOccasion
         dateReceived = receivedSessionDate
@@ -47,16 +44,9 @@ class fullViewTableViewController: UITableViewController {
         organizerName = receivedOrganizerName
         occasionDate = receivedOccasionDate
         
-        createSessionArray()
+        loadList()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.loadList), name: Notification.Name("Load"), object: nil)
-
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     @objc func moveToRoot() {
@@ -86,23 +76,6 @@ class fullViewTableViewController: UITableViewController {
         return cell
     }
     func createSessionArray() {
-        /*
-        let sess : Session =
-            Session(
-                courseName      : "CS 115",
-                sessionDate     : "Monday 5:08AM 4/8",
-                occasionDate    : "5/7/2019",
-                addressOfSession: "BC 120",
-                occasion        : "Midterm",
-                organizer       : "Mijeong")
-        dbWrapper.instance.updateSession(sid: 2, newSession: sess)
-        */
-//        occasionReceived = "Exam"
-//        dateReceived = "Monday 4:00PM 4/9"
-//        courseNameReceived = "CS 115"
-//        address = "NC 120"
-//        organizerName = "Khayyam"
-//        receivedOccasionDate = "4/20/2019"
         if (receivedId != -1) {
             let rowid = dbWrapper.instance.updateSession(
                 sid: receivedId,

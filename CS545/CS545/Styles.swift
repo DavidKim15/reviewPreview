@@ -32,7 +32,6 @@ struct Theme {
         self.buttonTextColor = UIColor(rgb: 0xAE2A2A)
         self.buttonBackgroundColor = UIColor(rgb: 0x5F5F5F)
         self.labelTextColor = UIColor(rgb: 0xAE2A2A)
-//        self.labelBackgroundColor = UIColor(rgb: 0x5F5F5F)
         self.textFieldBackgroundColor = .white
         updateDisplay()
     }
@@ -47,7 +46,6 @@ struct Theme {
         
         let proxyLabel = UILabel.appearance()
         proxyLabel.textColor = Theme.labelTextColor
-//        proxyLabel.backgroundColor = Theme.labelBackgroundColor
         
         let proxyTextField = UITextField.appearance()
         proxyTextField.backgroundColor = textFieldBackgroundColor

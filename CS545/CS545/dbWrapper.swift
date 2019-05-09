@@ -15,7 +15,6 @@ class dbWrapper {
     
     private let sessions_table = Table("sessions_table")
     
-//    private let session_id = Expression<String>("session_id")
     private let id = Expression<Int64>("id")
     private let session_date = Expression<String>("session_date")
     private let occasion = Expression<String>("occasion")
@@ -74,7 +73,9 @@ class dbWrapper {
             return -1
         }
     }
-    func addSession(sdate: String, occ: String, odate: String, cname: String, address: String, oname: String, dOO : Date, dOS : Date) -> Int64 {
+    func addSession(sdate: String, occ: String, odate: String,
+                    cname: String, address: String, oname: String,
+                    dOO : Date, dOS : Date) -> Int64 {
         do {
             let insert = sessions_table.insert(
                 session_date        <- sdate,

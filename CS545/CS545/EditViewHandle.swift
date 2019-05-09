@@ -138,7 +138,6 @@ class EditViewHandle {
     
     
     static func setLabels(selected : Session) {
-        //        SessionViewHandle.sessionCourseName.text = SessionViewHandle.sessionCourseName.text! +  selected.courseName
         SessionViewHandle.sessionCourseName.text = selected.courseName
         SessionViewHandle.sessionDate.text = selected.sessionDate
         SessionViewHandle.sessionOccasion.text = selected.occasion

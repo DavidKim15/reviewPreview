@@ -34,72 +34,60 @@ class SessionViewHandle {
     static var courseNameLabel : UILabel = {
         let lbl = UILabel()
         lbl.text = "     Course Name: "
-//        lbl.textColor = .black
         lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
-//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
     static var sessionDateLabel : UILabel = {
         let lbl = UILabel()
         lbl.text = "     Session Date: "
-//        lbl.textColor = .black
         lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
-//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
     static var occasionLabel : UILabel = {
         let lbl = UILabel()
         lbl.text = "     Occasion: "
-//        lbl.textColor = .black
         lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
-//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
     static var occasionDateLabel : UILabel = {
         let lbl = UILabel()
         lbl.text = "     Occasion Date: "
-//        lbl.textColor = .black
         lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
-//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
     static var addressLabel : UILabel = {
         let lbl = UILabel()
         lbl.text = "     Location: "
-//        lbl.textColor = .black
         lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
-//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
     static var organizerLabel : UILabel = {
         let lbl = UILabel()
         lbl.text = "     Organizer: "
-//        lbl.textColor = .black
         lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.font = lbl.font.bold()
         lbl.textAlignment = .left
-//        lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
     }()
@@ -122,8 +110,6 @@ class SessionViewHandle {
     static var sessionCourseName : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
-//        lbl.textColor = UIColor(rgb: 0xff7f00)
-//        lbl.textColor = UIColor(rgb: 0xAE2A2A)
         lbl.font = UIFont.systemFont(ofSize: fontSize)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
@@ -173,13 +159,8 @@ class SessionViewHandle {
     static var editButton: UIButton = {
         let btn = UIButton(frame: CGRect(x: 100, y: 100,width: 100, height: 25))
         btn.setTitle("Edit", for: .normal)
-//        btn.setTitleColor(.blue,for: .normal)
         btn.setTitleColor(UIColor(rgb: 0x007aff), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-//        btn.layer.cornerRadius = 5
-//        btn.layer.borderWidth = 1
-//        btn.layer.borderColor = UIColor.blue.cgColor
-//        btn.titleEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
         return btn
     }()
     
@@ -188,16 +169,11 @@ class SessionViewHandle {
         btn.setTitle("Delete", for: .normal)
         btn.setTitleColor(.red,for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-//        btn.layer.cornerRadius = 5
-//        btn.layer.borderWidth = 1
-//        btn.layer.borderColor = UIColor.blue.cgColor
-//        btn.titleEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
         return btn
     }()
 
     
     static func setLabels(selected : Session) {
-//        SessionViewHandle.sessionCourseName.text = SessionViewHandle.sessionCourseName.text! +  selected.courseName
         SessionViewHandle.sessionCourseName.text = selected.courseName
         SessionViewHandle.sessionDate.text = selected.sessionDate
         SessionViewHandle.sessionOccasion.text = selected.occasion

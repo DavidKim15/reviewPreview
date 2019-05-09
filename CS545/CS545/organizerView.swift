@@ -17,7 +17,6 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var datePicker = UIDatePicker()
     @IBOutlet weak var courseName: UITextField?
     @IBOutlet weak var reviewSessionDatePicker = UIDatePicker()
-    //@IBOutlet weak var pickLocation: UIPickerView!
     @IBOutlet weak var organizerName: UITextField?
     @IBOutlet weak var userInputLocation: UITextField?
 
@@ -82,18 +81,6 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         fullViewTableViewController.dateObjSession = dateObjSession
         fullViewTableViewController.receivedId = editingSelectedSession.1
     }
- 
-//    @IBAction func navigate_validate(_ sender: Any) {
-//        if organizerName?.text == "" && courseName?.text == "" {
-//            organizerName?.placeholder = "Enter a name!"
-//            courseName?.placeholder = "Enter a course name!"
-//        }
-//        else {
-//            let ft = UIStoryboard(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "fullViewTableViewController") as UIViewController
-//            self.navigationController?.pushViewController(ft, animated: true)
-//        }
-//
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -202,8 +189,6 @@ class organizerView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @objc func comeBackHere(sender: UIBarButtonItem) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let SessionView = storyBoard.instantiateViewController(withIdentifier: "SessionView") as! SessionView
-//        SessionView.selectedSession = Session(  courseName = courseName.text!,
-//                                                sessionDate = )
         self.present(SessionView, animated: true, completion: nil)
     }
 }
